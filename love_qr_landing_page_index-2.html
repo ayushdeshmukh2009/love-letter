@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>For My Love ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --accent:#ff6b9a;
+      --soft:#ffd6e5;
+      --paper:#fff5f8;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;background:linear-gradient(135deg,#ffdee9,#b5fffc);color:white;font-family:'Poppins',sans-serif;overflow:hidden;position:relative;}
+    .wrap{display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:100vh;padding:20px;position:relative;z-index:1;}
+
+    /* floating hearts and balloon hearts */
+    .hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+    .heart, .balloon{position:absolute;width:20px;height:20px;background:var(--accent);transform:rotate(45deg);border-radius:4px;opacity:.8;animation:floatUp 10s linear infinite;}
+    .heart:before,.heart:after,.balloon:before,.balloon:after{content:'';position:absolute;width:20px;height:20px;background:var(--accent);border-radius:50%;}
+    .heart:before,.balloon:before{top:-10px;left:0}
+    .heart:after,.balloon:after{top:0;left:-10px}
+    @keyframes floatUp{0%{transform:translateY(0) rotate(45deg) scale(0.8);opacity:.9}100%{transform:translateY(-120vh) rotate(45deg) scale(1.2);opacity:0}}
+
+    /* envelope */
+    .envelope{position:relative;width:380px;height:260px;background:var(--paper);border-radius:12px;box-shadow:0 10px 40px rgba(255,107,154,0.3), inset 0 0 0 2px rgba(255,255,255,0.3);cursor:pointer;transition:transform 0.6s;perspective:1200px;overflow:hidden;margin-bottom:40px}
+    .flap{position:absolute;top:0;left:0;width:100%;height:50%;background:linear-gradient(180deg,#ff8ebc,#ff5f93);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s ease;z-index:3;border-top-left-radius:12px;border-top-right-radius:12px;}
+    .envelope.open .flap{transform:rotateX(-180deg)}
+    .seal{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle at 30% 30%,#fff8,#ff6b9a);border-radius:50%;width:70px;height:70px;display:flex;align-items:center;justify-content:center;font-family:'Great Vibes';font-size:26px;color:white;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:4;}
+
+    /* flip card */
+    .card-wrap{width:80vw;max-width:800px;height:60vh;perspective:1200px;margin-top:20px;display:none;}
+    .card{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 1s ease;}
+    .card.is-flipped{transform:rotateY(180deg)}
+    .card-side{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;border-radius:16px;backface-visibility:hidden;overflow:auto;}
+    .card-front{background:linear-gradient(145deg,#1c2333,#0b1220);border:2px solid rgba(255,255,255,0.1);box-shadow:0 6px 20px rgba(255,255,255,0.1);}
+    .card-front h2{font-family:'Great Vibes';font-size:42px;color:var(--soft);text-align:center}
+    .card-back{background:linear-gradient(160deg,#0d182b,#142a3d);transform:rotateY(180deg);color:white;font-size:16px;line-height:1.6;white-space:pre-wrap;overflow-y:auto;}
+    .hint{text-align:center;color:#ddd;font-size:14px;margin-top:8px;}
+
+    /* watermark */
+    .watermark{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);color:white;font-size:14px;opacity:.8;font-family:'Great Vibes';text-shadow:0 0 6px #ff6b9a,0 0 12px #fff;z-index:5}
+
+    @media(max-width:650px){.envelope{width:300px;height:200px}.card-wrap{width:90vw;height:50vh}}
+  </style>
+</head>
+<body>
+  <div class="hearts">
+    <!-- floating hearts and balloon hearts -->
+    <div class="heart" style="left:5%;animation-delay:0s"></div>
+    <div class="heart" style="left:20%;animation-delay:2s"></div>
+    <div class="heart" style="left:35%;animation-delay:4s"></div>
+    <div class="heart" style="left:50%;animation-delay:1s"></div>
+    <div class="balloon" style="left:65%;animation-delay:3s"></div>
+    <div class="balloon" style="left:80%;animation-delay:5s"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="envelope" id="envelope" title="Tap to open">
+      <div class="flap"></div>
+      <div class="seal">💌</div>
+    </div>
+
+    <div class="card-wrap" id="cardWrap">
+      <div class="card" id="card">
+        <div class="card-side card-front">
+          <h2>For My Cutuuuu 💖</h2>
+        </div>
+        <div class="card-side card-back">
+          <p>Myyy cutuuuu aaruu 😚from the day you've entered my life I've noticed myself smiling more than i have ever done before I'm seeing my self glowing more,being more confident and most important BEING SOOOOO IN LOVE WITH YOU DARLINNG 🤭😘🥹🫶🏻 THESE HAVE BEEN THE BEST DAYS OF MY LIFE I WANNA SPEND THE REST OF MY LIFE WITH YOU MY LOVE aapke saath jeene ke liye ye zindagi bhi kam pd jayegi shyd pr harr janam aapke pass wapas aana hai 😭✨✨i really really wanna marry you my shonaaa 🤭👉🏻👈🏻aapki inn khubsoorat aankho ka nasha hota hai jab unhe dekhta hu bs iss intezaar me hu ki kab ye khubsoorat aankhein meri harr din ki shuruwat krenge ✨😮‍💨kab subha uthte hi phone ki jagah aapki inn nasheeli aankho me dubne ka mauka mile Teri aankhein... kuch keh jaati hain chup rehte hue,
+Jaise baarish bolti ho, bina girte hue.
+
+Woh muskaan teri, dil ko chain sa deti hai,
+Zakhm purane bhi, pal mein bhula deti hai.
+
+Kya jaadu hai tu, kya asar teri baat ka,
+Aankhein likh deti hain, jo lafz na  jata ske ye haal iss dil ka ✨😋😋 i love you smmmm majhi raaniiii mwaaahhhh 😘😘🤭</p>
+        </div>
+      </div>
+      <div class="hint">Tap the card to flip 💞</div>
+    </div>
+  </div>
+
+  <div class="watermark">Made by Path for Aaruu 💖</div>
+
+  <script>
+    const envelope=document.getElementById('envelope');
+    const cardWrap=document.getElementById('cardWrap');
+    const card=document.getElementById('card');
+
+    envelope.addEventListener('click',()=>{
+      envelope.classList.add('open');
+      setTimeout(()=>{cardWrap.style.display='block';cardWrap.scrollIntoView({behavior:'smooth',block:'center'});},900);
+    });
+
+    card.addEventListener('click',()=>card.classList.toggle('is-flipped'));
+  </script>
+</body>
+</html>
